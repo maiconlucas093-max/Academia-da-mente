@@ -1,15 +1,128 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101b2b">
+  <meta name="description" content="Academia da Mente — universidade digital de conhecimento, desenvolvimento intelectual e aprendizagem.">
+  <title>Academia da Mente | Universidade Digital</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/responsive.css">
 </head>
-
 <body>
-  <p>teste</p>
-  
-</body>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo principal</a>
 
+  <div class="app-layout">
+    <aside class="sidebar" aria-label="Navegação principal">
+      <a class="brand" href="index.html" aria-label="Academia da Mente — página inicial">
+        <span class="brand-symbol" aria-hidden="true">A</span>
+        <span class="brand-text"><strong>ACADEMIA</strong><span>DA MENTE</span></span>
+      </a>
+
+      <div class="sidebar-section">
+        <span class="menu-label">INSTITUIÇÃO</span>
+        <nav class="sidebar-nav">
+          <a class="nav-link is-active" href="index.html" aria-current="page"><span class="nav-icon" aria-hidden="true">⌂</span><span>Painel principal</span></a>
+          <a class="nav-link" href="pages/departamentos.html"><span class="nav-icon" aria-hidden="true">▤</span><span>Departamentos</span></a>
+          <a class="nav-link" href="pages/cursos.html"><span class="nav-icon" aria-hidden="true">▣</span><span>Cursos</span></a>
+          <a class="nav-link" href="pages/biblioteca.html"><span class="nav-icon" aria-hidden="true">▥</span><span>Biblioteca</span></a>
+        </nav>
+      </div>
+
+      <div class="sidebar-section">
+        <span class="menu-label">ÁREA DO ESTUDANTE</span>
+        <nav class="sidebar-nav">
+          <a class="nav-link" href="pages/meus-estudos.html"><span class="nav-icon" aria-hidden="true">◷</span><span>Meus estudos</span></a>
+          <a class="nav-link" href="pages/configuracoes.html"><span class="nav-icon" aria-hidden="true">⚙</span><span>Configurações</span></a>
+        </nav>
+      </div>
+
+      <div class="sidebar-bottom">
+        <div class="sidebar-note">
+          <span class="sidebar-note-mark" aria-hidden="true">✦</span>
+          <p>O conhecimento é uma jornada contínua.</p>
+        </div>
+        <div class="sidebar-footer"><span>ACADEMIA DA MENTE</span><small>Universidade Digital</small></div>
+      </div>
+    </aside>
+
+    <div class="main-layout">
+      <header class="topbar">
+        <div class="topbar-context">
+          <span class="topbar-kicker">UNIVERSIDADE DIGITAL</span>
+          <strong>Ambiente de aprendizagem</strong>
+        </div>
+        <div class="topbar-actions">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span class="student-status">Ambiente inicial</span>
+        </div>
+      </header>
+
+      <main id="conteudo" class="main-content">
+        <section class="welcome-section">
+          <div class="welcome-copy">
+            <span class="eyebrow"><span class="eyebrow-line"></span> CONHECIMENTO · CONSCIÊNCIA · EVOLUÇÃO</span>
+            <h1>Bem-vindo à<br><em>Academia da Mente.</em></h1>
+            <p>Um ambiente dedicado à exploração do conhecimento, ao desenvolvimento intelectual e à aprendizagem contínua.</p>
+            <a class="button button-primary" href="pages/departamentos.html">Explorar a universidade <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="welcome-seal" aria-hidden="true">
+            <div class="seal-ring"><span class="seal-star">✦</span><span class="seal-letter">A</span><span class="seal-caption">SCIENTIA · MENS · PROGRESSUS</span></div>
+          </div>
+        </section>
+
+        <section class="dashboard-section" aria-labelledby="overview-title">
+          <div class="section-heading">
+            <div><span class="eyebrow">VISÃO GERAL</span><h2 id="overview-title">Seu ambiente acadêmico</h2></div>
+            <span class="section-aside">SEU PONTO DE PARTIDA</span>
+          </div>
+          <div class="overview-grid">
+            <article class="overview-card"><div class="metric-top"><span class="card-label">Cursos em andamento</span><span class="metric-icon" aria-hidden="true">▣</span></div><strong>0</strong><small>Nenhuma matrícula cadastrada</small></article>
+            <article class="overview-card"><div class="metric-top"><span class="card-label">Aulas concluídas</span><span class="metric-icon" aria-hidden="true">✓</span></div><strong>0</strong><small>Seu histórico começará aqui</small></article>
+            <article class="overview-card"><div class="metric-top"><span class="card-label">Tempo de estudo</span><span class="metric-icon" aria-hidden="true">◷</span></div><strong>0<span class="metric-unit">h</span></strong><small>Tempo acumulado</small></article>
+            <article class="overview-card"><div class="metric-top"><span class="card-label">Favoritos</span><span class="metric-icon" aria-hidden="true">☆</span></div><strong>0</strong><small>Nenhum item salvo</small></article>
+          </div>
+        </section>
+
+        <section class="dashboard-section" aria-labelledby="continue-title">
+          <div class="section-heading"><div><span class="eyebrow">SUA JORNADA</span><h2 id="continue-title">Continue seus estudos</h2></div></div>
+          <div class="empty-state empty-state-featured">
+            <div class="empty-illustration" aria-hidden="true"><span class="empty-orbit orbit-one"></span><span class="empty-orbit orbit-two"></span><span class="empty-core">✦</span></div>
+            <div class="empty-copy">
+              <span class="empty-overline">UM NOVO CAPÍTULO COMEÇA</span>
+              <h3>Sua jornada começa aqui</h3>
+              <p>Quando você estiver matriculado em um curso, sua última aula estudada e seu progresso aparecerão neste espaço.</p>
+              <a href="pages/departamentos.html" class="text-link">Explorar departamentos <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+        </section>
+
+        <section class="dashboard-section" aria-labelledby="departments-title">
+          <div class="section-heading">
+            <div><span class="eyebrow">ESTRUTURA ACADÊMICA</span><h2 id="departments-title">Departamentos</h2></div>
+            <a href="pages/departamentos.html" class="text-link">Ver departamentos <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="department-preview">
+            <div class="department-preview-icon" aria-hidden="true">⌘</div>
+            <div><h3>O conhecimento em oito grandes áreas</h3><p>Uma estrutura multidisciplinar para conectar ideias, desenvolver repertório e aprofundar sua compreensão do mundo.</p></div>
+            <span class="planned-count"><strong>08</strong><small>áreas planejadas</small></span>
+          </div>
+        </section>
+
+        <section class="dashboard-section" aria-labelledby="library-title">
+          <div class="section-heading"><div><span class="eyebrow">ACERVO DIGITAL</span><h2 id="library-title">Biblioteca de aprendizagem</h2></div></div>
+          <div class="empty-state empty-state-compact">
+            <span class="library-empty-icon" aria-hidden="true">▤</span>
+            <div><h3>Biblioteca vazia</h3><p>Nenhum conteúdo didático ou arquivo de áudio foi cadastrado.</p></div>
+            <span class="empty-badge">ACERVO NÃO INICIADO</span>
+          </div>
+        </section>
+      </main>
+
+      <footer class="main-footer"><span>© ACADEMIA DA MENTE</span><span>Conhecimento sem limites.</span></footer>
+    </div>
+  </div>
+</body>
 </html>
