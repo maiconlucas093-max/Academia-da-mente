@@ -1,0 +1,238 @@
+/* =========================================================
+   ACADEMIA DA MENTE — COMPONENTES REUTILIZÁVEIS
+   ========================================================= */
+
+.sidebar {
+  position: fixed;
+  z-index: 20;
+  inset: 0 auto 0 0;
+  display: flex;
+  flex-direction: column;
+  width: var(--sidebar-width);
+  min-height: 100vh;
+  padding: 30px 20px 22px;
+  border-right: 1px solid var(--line-cool);
+  background: linear-gradient(180deg, #111e30 0%, #0e1928 100%);
+}
+.brand { display: flex; align-items: center; gap: 13px; padding: 0 8px 38px; }
+.brand-symbol {
+  display: grid;
+  place-items: center;
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(214,189,137,.72);
+  border-radius: 50%;
+  color: var(--gold-400);
+  font-family: var(--font-display);
+  font-size: 25px;
+  line-height: 1;
+}
+.brand-text { display: flex; flex-direction: column; gap: 2px; line-height: 1.25; }
+.brand-text strong { color: var(--paper-100); font-size: 11px; font-weight: 700; letter-spacing: .16em; }
+.brand-text span { color: var(--gold-400); font-size: 9px; font-weight: 600; letter-spacing: .25em; }
+.sidebar-section { margin-bottom: 29px; }
+.menu-label {
+  display: block;
+  padding: 0 11px 12px;
+  color: #758397;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .18em;
+}
+.sidebar-nav { display: grid; gap: 5px; }
+.nav-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  min-height: 44px;
+  padding: 0 12px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  color: #aab5c2;
+  font-size: 12px;
+  font-weight: 500;
+  transition: color .2s ease, background .2s ease, border-color .2s ease;
+}
+.nav-link:hover { background: rgba(255,255,255,.045); color: var(--paper-100); }
+.nav-link.is-active {
+  border-color: rgba(214,189,137,.13);
+  background: linear-gradient(90deg, rgba(196,166,106,.14), rgba(196,166,106,.035));
+  color: var(--gold-300);
+}
+.nav-link.is-active::before {
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: -1px;
+  width: 2px;
+  border-radius: 2px;
+  background: var(--gold-400);
+  content: "";
+}
+.nav-icon { display: inline-grid; place-items: center; width: 19px; color: var(--gold-400); font-size: 17px; line-height: 1; }
+.sidebar-bottom { margin-top: auto; }
+.sidebar-note { display: flex; align-items: flex-start; gap: 10px; margin: 0 5px 25px; padding: 14px 12px; border: 1px solid var(--line-cool); border-radius: 10px; background: rgba(255,255,255,.018); }
+.sidebar-note-mark { color: var(--gold-400); font-size: 14px; }
+.sidebar-note p { margin: 0; color: #91a0b0; font-family: var(--font-display); font-size: 13px; font-style: italic; line-height: 1.5; }
+.sidebar-footer { display: flex; flex-direction: column; gap: 4px; padding: 18px 8px 0; border-top: 1px solid var(--line-cool); }
+.sidebar-footer span { color: #9ba7b5; font-size: 8px; font-weight: 700; letter-spacing: .15em; }
+.sidebar-footer small { color: #69798c; font-size: 10px; }
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 76px;
+  padding: 0 max(44px, calc((100vw - var(--sidebar-width) - var(--content-width))/2));
+  border-bottom: 1px solid var(--line-cool);
+  background: rgba(12,20,32,.58);
+}
+.topbar-context { display: flex; flex-direction: column; gap: 2px; }
+.topbar-kicker { color: var(--gold-400); font-size: 8px; font-weight: 700; letter-spacing: .19em; }
+.topbar-context strong { color: #d6dbe1; font-size: 12px; font-weight: 500; }
+.topbar-actions { display: flex; align-items: center; gap: 9px; padding: 8px 12px; border: 1px solid var(--line-cool); border-radius: 99px; background: rgba(255,255,255,.025); }
+.status-dot { width: 6px; height: 6px; border-radius: 50%; background: #8ea995; box-shadow: 0 0 0 4px rgba(142,169,149,.1); }
+.student-status { color: var(--muted-200); font-size: 10px; font-weight: 600; }
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  min-height: 46px;
+  padding: 0 19px;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .025em;
+  transition: transform .2s ease, background .2s ease, border-color .2s ease;
+}
+.button:hover { transform: translateY(-2px); }
+.button-primary { border-color: rgba(231,214,178,.55); background: var(--gold-400); color: #172234; }
+.button-primary:hover { background: var(--gold-300); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
+/* =========================================================
+   ACADEMIA DA MENTE — COMPONENTES REUTILIZÁVEIS
+   ========================================================= */
+
+.sidebar {
+  position: fixed;
+  z-index: 20;
+  inset: 0 auto 0 0;
+  display: flex;
+  flex-direction: column;
+  width: var(--sidebar-width);
+  min-height: 100vh;
+  padding: 30px 20px 22px;
+  border-right: 1px solid var(--line-cool);
+  background: linear-gradient(180deg, #111e30 0%, #0e1928 100%);
+}
+.brand { display: flex; align-items: center; gap: 13px; padding: 0 8px 38px; }
+.brand-symbol {
+  display: grid;
+  place-items: center;
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(214,189,137,.72);
+  border-radius: 50%;
+  color: var(--gold-400);
+  font-family: var(--font-display);
+  font-size: 25px;
+  line-height: 1;
+}
+.brand-text { display: flex; flex-direction: column; gap: 2px; line-height: 1.25; }
+.brand-text strong { color: var(--paper-100); font-size: 11px; font-weight: 700; letter-spacing: .16em; }
+.brand-text span { color: var(--gold-400); font-size: 9px; font-weight: 600; letter-spacing: .25em; }
+.sidebar-section { margin-bottom: 29px; }
+.menu-label {
+  display: block;
+  padding: 0 11px 12px;
+  color: #758397;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .18em;
+}
+.sidebar-nav { display: grid; gap: 5px; }
+.nav-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  min-height: 44px;
+  padding: 0 12px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  color: #aab5c2;
+  font-size: 12px;
+  font-weight: 500;
+  transition: color .2s ease, background .2s ease, border-color .2s ease;
+}
+.nav-link:hover { background: rgba(255,255,255,.045); color: var(--paper-100); }
+.nav-link.is-active {
+  border-color: rgba(214,189,137,.13);
+  background: linear-gradient(90deg, rgba(196,166,106,.14), rgba(196,166,106,.035));
+  color: var(--gold-300);
+}
+.nav-link.is-active::before {
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: -1px;
+  width: 2px;
+  border-radius: 2px;
+  background: var(--gold-400);
+  content: "";
+}
+.nav-icon { display: inline-grid; place-items: center; width: 19px; color: var(--gold-400); font-size: 17px; line-height: 1; }
+.sidebar-bottom { margin-top: auto; }
+.sidebar-note { display: flex; align-items: flex-start; gap: 10px; margin: 0 5px 25px; padding: 14px 12px; border: 1px solid var(--line-cool); border-radius: 10px; background: rgba(255,255,255,.018); }
+.sidebar-note-mark { color: var(--gold-400); font-size: 14px; }
+.sidebar-note p { margin: 0; color: #91a0b0; font-family: var(--font-display); font-size: 13px; font-style: italic; line-height: 1.5; }
+.sidebar-footer { display: flex; flex-direction: column; gap: 4px; padding: 18px 8px 0; border-top: 1px solid var(--line-cool); }
+.sidebar-footer span { color: #9ba7b5; font-size: 8px; font-weight: 700; letter-spacing: .15em; }
+.sidebar-footer small { color: #69798c; font-size: 10px; }
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 76px;
+  padding: 0 max(44px, calc((100vw - var(--sidebar-width) - var(--content-width))/2));
+  border-bottom: 1px solid var(--line-cool);
+  background: rgba(12,20,32,.58);
+}
+.topbar-context { display: flex; flex-direction: column; gap: 2px; }
+.topbar-kicker { color: var(--gold-400); font-size: 8px; font-weight: 700; letter-spacing: .19em; }
+.topbar-context strong { color: #d6dbe1; font-size: 12px; font-weight: 500; }
+.topbar-actions { display: flex; align-items: center; gap: 9px; padding: 8px 12px; border: 1px solid var(--line-cool); border-radius: 99px; background: rgba(255,255,255,.025); }
+.status-dot { width: 6px; height: 6px; border-radius: 50%; background: #8ea995; box-shadow: 0 0 0 4px rgba(142,169,149,.1); }
+.student-status { color: var(--muted-200); font-size: 10px; font-weight: 600; }
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  min-height: 46px;
+  padding: 0 19px;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .025em;
+  transition: transform .2s ease, background .2s ease, border-color .2s ease;
+}
+.button:hover { transform: translateY(-2px); }
+.button-primary { border-color: rgba(231,214,178,.55); background: var(--gold-400); color: #172234; }
+.button-primary:hover { background: var(--gold-300); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
