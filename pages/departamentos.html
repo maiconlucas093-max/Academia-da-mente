@@ -1,0 +1,1079 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101b2b">
+  <meta name="description" content="Conheça os 11 departamentos da Academia da Mente: psicologia, neurociência, consciência, metacognição, filosofia e muito mais.">
+  <title>Departamentos | Academia da Mente</title>
+
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+
+  <style>
+    .departments-page {
+      width: min(100% - 88px, 1440px);
+      margin: 0 auto;
+      padding: 42px 0 76px;
+    }
+
+    .departments-hero {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(28px, 5vw, 58px);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background:
+        radial-gradient(circle at 85% 15%, rgba(112,201,197,.12), transparent 22rem),
+        linear-gradient(135deg, #17283c, #101b2b 70%);
+    }
+
+    .departments-hero::after {
+      position: absolute;
+      right: -75px;
+      bottom: -160px;
+      width: 360px;
+      height: 360px;
+      border: 1px solid rgba(214,189,137,.13);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 35px rgba(214,189,137,.025),
+        0 0 0 75px rgba(214,189,137,.02);
+      content: "";
+      pointer-events: none;
+    }
+
+    .departments-hero h1 {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+      margin: 19px 0 16px;
+      color: var(--paper-100);
+      font-family: var(--font-display);
+      font-size: clamp(39px, 6vw, 65px);
+      font-weight: 500;
+      letter-spacing: -.04em;
+      line-height: 1.12;
+    }
+
+    .departments-hero h1 em {
+      color: var(--gold-400);
+      font-weight: 400;
+    }
+
+    .departments-hero > p {
+      position: relative;
+      z-index: 1;
+      max-width: 690px;
+      margin-bottom: 25px;
+      color: var(--muted-200);
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .hero-index {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+      position: relative;
+      z-index: 1;
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line-cool);
+    }
+
+    .hero-index span {
+      color: var(--muted-300);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .13em;
+    }
+
+    .hero-index strong {
+      color: var(--gold-400);
+    }
+
+    .department-overview {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin: 25px 0 48px;
+    }
+
+    .overview-item {
+      padding: 19px;
+      border: 1px solid var(--line-cool);
+      border-radius: var(--radius-md);
+      background: var(--surface);
+    }
+
+    .overview-item strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--gold-400);
+      font-family: var(--font-display);
+      font-size: 27px;
+      font-weight: 500;
+    }
+
+    .overview-item span {
+      color: var(--muted-300);
+      font-size: 10px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .department-section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .department-section-heading h2 {
+      margin: 8px 0 0;
+      color: var(--paper-100);
+      font-family: var(--font-display);
+      font-size: clamp(25px, 3vw, 35px);
+      font-weight: 500;
+    }
+
+    .department-section-heading p {
+      max-width: 450px;
+      margin: 0;
+      font-size: 11px;
+      line-height: 1.7;
+    }
+
+    .department-search {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 25px 0;
+      padding: 12px 16px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: rgba(255,255,255,.035);
+    }
+
+    .department-search span {
+      color: var(--gold-400);
+      font-size: 19px;
+    }
+
+    .department-search input {
+      width: 100%;
+      min-width: 0;
+      border: 0;
+      outline: none;
+      background: transparent;
+      color: var(--paper-100);
+      font-size: 13px;
+    }
+
+    .department-search input::placeholder {
+      color: var(--muted-300);
+    }
+
+    .department-search:focus-within {
+      border-color: var(--gold-400);
+    }
+
+    .search-feedback {
+      min-height: 20px;
+      margin: -13px 0 18px;
+      color: var(--muted-300);
+      font-size: 10px;
+    }
+
+    .departments-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .department-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      padding: 23px;
+      border: 1px solid var(--line-cool);
+      border-radius: var(--radius-md);
+      background:
+        linear-gradient(145deg, rgba(255,255,255,.035), rgba(255,255,255,.012));
+      transition: transform .2s ease, border-color .2s ease;
+    }
+
+    .department-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(214,189,137,.48);
+    }
+
+    .department-card.featured {
+      border-color: rgba(112,201,197,.32);
+      background:
+        radial-gradient(circle at 100% 0%, rgba(112,201,197,.09), transparent 17rem),
+        rgba(255,255,255,.025);
+    }
+
+    .department-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 17px;
+    }
+
+    .department-number {
+      color: var(--gold-400);
+      font-family: var(--font-display);
+      font-size: 24px;
+    }
+
+    .department-tag {
+      padding: 5px 9px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      color: var(--muted-300);
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .department-card h3 {
+      margin: 0 0 10px;
+      color: var(--paper-100);
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 500;
+      line-height: 1.3;
+    }
+
+    .department-description {
+      min-height: 68px;
+      margin: 0 0 18px;
+      color: var(--muted-200);
+      font-size: 11px;
+      line-height: 1.8;
+    }
+
+    .department-detail {
+      padding-top: 15px;
+      border-top: 1px solid var(--line-cool);
+    }
+
+    .detail-label {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--gold-400);
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .department-authors {
+      margin: 0 0 14px;
+      color: var(--paper-200);
+      font-size: 10px;
+      line-height: 1.8;
+    }
+
+    .department-topics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .department-topics span {
+      padding: 5px 8px;
+      border: 1px solid rgba(211,221,232,.1);
+      border-radius: 5px;
+      color: var(--muted-300);
+      font-size: 8px;
+    }
+
+    .department-card[hidden] {
+      display: none;
+    }
+
+    .no-results {
+      display: none;
+      padding: 35px 20px;
+      border: 1px dashed var(--line);
+      border-radius: var(--radius-md);
+      color: var(--muted-200);
+      font-size: 12px;
+      text-align: center;
+    }
+
+    .no-results.visible {
+      display: block;
+    }
+
+    .methodology-panel {
+      margin-top: 55px;
+      padding: clamp(22px, 4vw, 38px);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background:
+        radial-gradient(circle at 100% 0%, rgba(112,201,197,.08), transparent 20rem),
+        var(--surface);
+    }
+
+    .methodology-panel h2 {
+      margin: 10px 0 12px;
+      color: var(--paper-100);
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 500;
+    }
+
+    .methodology-panel > p {
+      max-width: 760px;
+      font-size: 11px;
+      line-height: 1.9;
+    }
+
+    .evidence-levels {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 23px;
+    }
+
+    .evidence-level {
+      padding: 15px;
+      border: 1px solid var(--line-cool);
+      border-radius: 9px;
+      background: rgba(0,0,0,.12);
+    }
+
+    .evidence-level strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--gold-400);
+      font-size: 10px;
+    }
+
+    .evidence-level p {
+      margin: 0;
+      font-size: 9px;
+      line-height: 1.7;
+    }
+
+    .department-note {
+      display: flex;
+      align-items: flex-start;
+      gap: 13px;
+      margin-top: 20px;
+      padding: 17px;
+      border-left: 2px solid #70c9c5;
+      background: rgba(112,201,197,.055);
+    }
+
+    .department-note span {
+      color: #70c9c5;
+      font-size: 17px;
+    }
+
+    .department-note p {
+      margin: 0;
+      font-size: 10px;
+      line-height: 1.8;
+    }
+
+    .departments-footer {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line-cool);
+      color: var(--muted-300);
+      font-size: 9px;
+    }
+
+    @media (max-width: 900px) {
+      .departments-page {
+        width: min(100% - 48px, 1440px);
+      }
+    }
+
+    @media (max-width: 650px) {
+      .departments-page {
+        width: calc(100% - 32px);
+        padding-top: 25px;
+      }
+
+      .departments-hero {
+        padding: 27px 20px;
+      }
+
+      .departments-hero h1 {
+        font-size: 39px;
+      }
+
+      .departments-hero > p {
+        font-size: 12px;
+      }
+
+      .hero-index {
+        gap: 12px;
+      }
+
+      .hero-index span {
+        font-size: 8px;
+      }
+
+      .department-overview {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        margin-bottom: 38px;
+      }
+
+      .overview-item {
+        padding: 14px;
+      }
+
+      .overview-item strong {
+        font-size: 23px;
+      }
+
+      .overview-item span {
+        font-size: 8px;
+      }
+
+      .department-section-heading {
+        display: block;
+      }
+
+      .department-section-heading p {
+        margin-top: 10px;
+      }
+
+      .departments-grid {
+        grid-template-columns: 1fr;
+        gap: 11px;
+      }
+
+      .department-card {
+        padding: 19px;
+      }
+
+      .department-description {
+        min-height: 0;
+      }
+
+      .evidence-levels {
+        grid-template-columns: 1fr;
+      }
+
+      .methodology-panel h2 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo principal</a>
+
+  <div class="app-layout">
+    <aside class="sidebar" aria-label="Navegação principal">
+      <a class="brand" href="../index.html" aria-label="Academia da Mente — página inicial">
+        <span class="brand-symbol" aria-hidden="true">A</span>
+        <span class="brand-text">
+          <strong>ACADEMIA</strong>
+          <span>DA MENTE</span>
+        </span>
+      </a>
+
+      <div class="sidebar-section">
+        <span class="menu-label">INSTITUIÇÃO</span>
+        <nav class="sidebar-nav">
+          <a class="nav-link" href="../index.html">
+            <span class="nav-icon" aria-hidden="true">⌂</span>
+            <span>Painel principal</span>
+          </a>
+          <a class="nav-link is-active" href="departamentos.html" aria-current="page">
+            <span class="nav-icon" aria-hidden="true">▤</span>
+            <span>Departamentos</span>
+          </a>
+          <a class="nav-link" href="cursos.html">
+            <span class="nav-icon" aria-hidden="true">▣</span>
+            <span>Cursos</span>
+          </a>
+          <a class="nav-link" href="biblioteca.html">
+            <span class="nav-icon" aria-hidden="true">▥</span>
+            <span>Biblioteca</span>
+          </a>
+        </nav>
+      </div>
+
+      <div class="sidebar-section">
+        <span class="menu-label">ÁREA DO ESTUDANTE</span>
+        <nav class="sidebar-nav">
+          <a class="nav-link" href="meus-estudos.html">
+            <span class="nav-icon" aria-hidden="true">◷</span>
+            <span>Meus estudos</span>
+          </a>
+          <a class="nav-link" href="configuracoes.html">
+            <span class="nav-icon" aria-hidden="true">⚙</span>
+            <span>Configurações</span>
+          </a>
+        </nav>
+      </div>
+
+      <div class="sidebar-bottom">
+        <div class="sidebar-note">
+          <span class="sidebar-note-mark" aria-hidden="true">✦</span>
+          <p>O conhecimento é uma jornada contínua.</p>
+        </div>
+        <div class="sidebar-footer">
+          <span>ACADEMIA DA MENTE</span>
+          <small>Universidade Digital</small>
+        </div>
+      </div>
+    </aside>
+
+    <div class="main-layout">
+      <header class="topbar">
+        <div class="topbar-context">
+          <span class="topbar-kicker">UNIVERSIDADE DIGITAL</span>
+          <strong>Departamentos acadêmicos</strong>
+        </div>
+        <div class="topbar-actions">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span class="student-status">11 áreas de conhecimento</span>
+        </div>
+      </header>
+
+      <main id="conteudo" class="departments-page">
+
+        <section class="departments-hero">
+          <span class="eyebrow">
+            <span class="eyebrow-line"></span>
+            ESTRUTURA ACADÊMICA
+          </span>
+
+          <h1>Um universo de estudos sobre <em>a mente humana.</em></h1>
+
+          <p>
+            Explore diferentes campos do conhecimento e investigue como
+            pensamento, cérebro, comportamento, sociedade e consciência
+            se relacionam. Uma formação interdisciplinar construída
+            sobre autores, teorias, pesquisas e pensamento crítico.
+          </p>
+
+          <div class="hero-index">
+            <span><strong>11</strong> DEPARTAMENTOS</span>
+            <span><strong>MULTIDISCIPLINAR</strong> ABORDAGEM</span>
+            <span><strong>ESTUDO</strong> PROGRESSIVO</span>
+          </div>
+        </section>
+
+        <section class="department-overview" aria-label="Visão geral">
+          <div class="overview-item">
+            <strong>11</strong>
+            <span>Departamentos</span>
+          </div>
+          <div class="overview-item">
+            <strong>Várias</strong>
+            <span>Escolas de pensamento</span>
+          </div>
+          <div class="overview-item">
+            <strong>Crítico</strong>
+            <span>Compromisso acadêmico</span>
+          </div>
+        </section>
+
+        <section aria-labelledby="departments-title">
+          <div class="department-section-heading">
+            <div>
+              <span class="eyebrow">CAMPOS DE INVESTIGAÇÃO</span>
+              <h2 id="departments-title">Nossos departamentos</h2>
+            </div>
+            <p>
+              Cada departamento possui um campo de estudo próprio e
+              estabelece conexões com as demais áreas.
+            </p>
+          </div>
+
+          <label class="department-search">
+            <span aria-hidden="true">⌕</span>
+            <input
+              id="departmentSearch"
+              type="search"
+              placeholder="Buscar por departamento, autor ou assunto..."
+              autocomplete="off"
+              aria-label="Buscar departamentos, autores ou assuntos"
+            >
+          </label>
+
+          <p class="search-feedback" id="searchFeedback" aria-live="polite">
+            Exibindo os 11 departamentos.
+          </p>
+
+          <div class="departments-grid" id="departmentsGrid">
+
+            <article class="department-card" data-search="psicologia analítica profunda jung freud adler fromm hillman von franz inconsciente arquétipos sombra persona individuação sonhos">
+              <div class="department-card-top">
+                <span class="department-number">01</span>
+                <span class="department-tag">Psicologia</span>
+              </div>
+              <h3>Psicologia Analítica e Profunda</h3>
+              <p class="department-description">
+                Estudo das dimensões conscientes e inconscientes da
+                experiência humana, dos símbolos, dos complexos e dos
+                processos de formação da personalidade.
+              </p>
+              <div class="department-detail">
+                <span class="detail-label">Autores centrais</span>
+                <p class="department-authors">
+                  Carl Gustav Jung, Sigmund Freud, Alfred Adler,
+                  Erich Fromm, James Hillman e Marie-Louise von Franz.
+                </p>
+                <span class="detail-label">Temas de investigação</span>
+                <div class="department-topics">
+                  <span>Inconsciente</span>
+                  <span>Arquétipos</span>
+                  <span>Sombra</span>
+                  <span>Persona</span>
+                  <span>Individuação</span>
+                  <span>Sonhos</span>
+                  <span>Complexos</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="department-card" data-search="neurociência cérebro sistema nervoso neuroplasticidade memória atenção emoções decisões damasio gazzaniga dehaene koch tononi">
+              <div class="department-card-top">
+                <span class="department-number">02</span>
+                <span class="department-tag">Ciência</span>
+              </div>
+              <h3>Neurociência</h3>
+              <p class="department-description">
+                Investigação do sistema nervoso e dos mecanismos
+                biológicos envolvidos na percepção, memória, emoções,
+                atenção, decisões e comportamento.
+              </p>
+              <div class="department-detail">
+                <span class="detail-label">Autores centrais</span>
+                <p class="department-authors">
+                  Antonio Damasio, Michael Gazzaniga, Stanislas Dehaene,
+                  Christof Koch e Giulio Tononi.
+                </p>
+                <span class="detail-label">Temas de investigação</span>
+                <div class="department-topics">
+                  <span>Cérebro</span>
+                  <span>Neuroplasticidade</span>
+                  <span>Memória</span>
+                  <span>Atenção</span>
+                  <span>Emoções</span>
+                  <span>Cognição</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="department-card" data-search="metacognição pensamento pensamento crítico autorregulação monitoramento cognitivo vieses crenças percepção decisões john flavell kahneman nelson">
+              <div class="department-card-top">
+                <span class="department-number">03</span>
+                <span class="department-tag">Cognição</span>
+              </div>
+              <h3>Metacognição</h3>
+              <p class="department-description">
+                Estudo da capacidade de observar, avaliar e regular
+                os próprios processos mentais, identificando padrões
+                de pensamento, erros e estratégias de aprendizagem.
+              </p>
+              <div class="department-detail">
+                <span class="detail-label">Autores centrais</span>
+                <p class="department-authors">
+                  John Flavell, Daniel Kahneman, Ann Brown,
+                  Thomas Nelson e Louis Narens.
+                </p>
+                <span class="detail-label">Temas de investigação</span>
+                <div class="department-topics">
+                  <span>Autoconsciência cognitiva</span>
+                  <span>Vieses</span>
+                  <span>Autorregulação</span>
+                  <span>Decisões</span>
+                  <span>Pensamento crítico</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="department-card" data-search="psicologia coletiva multidões catarse coletiva efervescência coletiva durkheim le bon bion identidade social contágio emocional grupos rituais">
+              <div class="department-card-top">
+                <span class="department-number">04</span>
+                <span class="department-tag">Sociedade</span>
+              </div>
+              <h3>Psicologia Coletiva</h3>
+              <p class="department-description">
+                Investigação dos fenômenos psicológicos que emergem
+                em grupos, multidões e comunidades, incluindo
+                experiências emocionais compartilhadas.
+              </p>
+              <div class="department-detail">
+                <span class="detail-label">Autores centrais</span>
+                <p class="department-authors">
+                  Gustave Le Bon, Émile Durkheim, Wilfred Bion,
+                  Carl Gustav Jung e Sigmund Freud.
+                </p>
+                <span class="detail-label">Temas de investigação</span>
+                <div class="department-topics">
+                  <span>Catarse coletiva</span>
+                  <span>Efervescência</span>
+                  <span>Multidões</span>
+                  <span>Contágio emocional</span>
+                  <span>Identidade grupal</span>
+                  <span>Rituais</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="department-card" data-search="filosofia consciência nietzsche william james viktor frankl foucault hannah arendt existência livre arbítrio ética identidade realidade">
+              <div class="department-card-top">
+                <span class="department-number">05</span>
+                <span class="department-tag">Filosofia</span>
+              </div>
+              <h3>Filosofia e Consciência</h3>
+              <p class="department-description">
+                Reflexão filosófica sobre a existência, a identidade,
+                a experiência consciente, a liberdade, a ética e
+                os fundamentos do conhecimento.
+              </p>
+              <div class="department-detail">
+                <span class="detail-label">Autores centrais</span>
+                <p class="department-authors">
+                  Friedrich Nietzsche, William James, Viktor Frankl,
+                  Michel Foucault e Hannah Arendt.
+                </p>
+                <span class="detail-label">Temas de investigação</span>
+                <div class="department-topics">
+                  <span>Existencialismo</span>
+                  <span>Identidade</span>
+                  <span>Livre-arbítrio</span>
+                  <span>Ética</span>
+                  <span>Sentido da vida</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="department-card" data-search="psicologia social comportamental bandura kurt lewin gustave le bon bion yalom comportamento aprendizagem social relações interpessoais influência cultural">
+              <div class="department-card-top">
+                <span class="department-number">06</span>
+                <span class="department-tag">Comportamento</span>
+              </div>
+              <h3>Psicologia Social e Comportamental</h3>
+              <p class="department-description">
+                Estudo dos mecanismos psicológicos e comportamentais
+                que influenciam as relações interpessoais, a aprendizagem
+                social e a interação entre indivíduo e ambiente.
+              </p>
+              <div class="department-detail">
+                <span class="detail-label">Autores centrais</span>
+                <p class="department-authors">
+                  Albert Bandura, Kurt Lewin, Gustave Le Bon,
+                  Wilfred Bion e Irvin Yalom.
+                </p>
+                <span class="detail-label">Temas de investigação</span>
+                <div class="department-topics">
+                  <span>Aprendizagem social</span>
+                  <span>Comportamento</span>
+                  <span>Grupos</span>
+                  <span>Influência social</span>
+                  <span>Relações humanas</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="department-card" data-search="aprendizagem desenvolvimento cognitivo piaget vygotsky kahneman flavell dehaene desenvolvimento intelectual pensamento crítico educação">
+              <div class="department-card-top">
+                <span class="department-number">07</span>
+                <span class="department-tag">Desenvolvimento</span>
+              </div>
+              <h3>Aprendizagem e Desenvolvimento Cognitivo</h3>
+              <p class="department-description">
+                Investigação de como as capacidades cognitivas se
+                desenvolvem, como construímos conhecimentos e
+                como aprendemos ao longo da vida.
+              </p>
+              <div class="department-detail">
+                <span class="detail-label">Autores centrais</span>
+                <p class="department-authors">
+                  Jean Piaget, Lev Vygotsky, Daniel Kahneman,
+                  John Flavell e Stanislas Dehaene.
+                </p>
+                <span class="detail-label">Temas de investigação</span>
+                <div class="department-topics">
+                  <span>Desenvolvimento cognitivo</span>
+                  <span>Educação</span>
+                  <span>Raciocínio</span>
+                  <span>Aprendizagem</span>
+                  <span>Pensamento crítico</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="department-card" data-search="aprendizagem memória atenção codificação consolidação recuperação esquecimento memória episódica semântica trabalho tulving baddeley">
+              <div class="department-card-top">
+                <span class="department-number">08</span>
+                <span class="department-tag">Memória</span>
+              </div>
+              <h3>Aprendizagem e Memória</h3>
+              <p class="department-description">
+                Estudo dos sistemas de memória e das etapas pelas quais
+                informações são codificadas, consolidadas, armazenadas
+                e recuperadas.
+              </p>
+              <div class="department-detail">
+                <span class="detail-label">Autores centrais</span>
+                <p class="department-authors">
+                  Endel Tulving, Alan Baddeley, Hermann Ebbinghaus,
+                  Elizabeth Loftus e Eric Kandel.
+                </p>
+                <span class="detail-label">Temas de investigação</span>
+                <div class="department-topics">
+                  <span>Memória de trabalho</span>
+                  <span>Memória episódica</span>
+                  <span>Consolidação</span>
+                  <span>Esquecimento</span>
+                  <span>Recuperação</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="department-card" data-search="psicologia social cultura relações humanas poder influência identidade normas instituições sociologia tajfel asch milgram goffman">
+              <div class="department-card-top">
+                <span class="department-number">09</span>
+                <span class="department-tag">Cultura e sociedade</span>
+              </div>
+              <h3>Psicologia Social</h3>
+              <p class="department-description">
+                Análise de como cultura, normas, instituições,
+                relações de poder e identidades sociais participam
+                da construção da experiência humana.
+              </p>
+              <div class="department-detail">
+                <span class="detail-label">Autores centrais</span>
+                <p class="department-authors">
+                  Henri Tajfel, Solomon Asch, Stanley Milgram,
+                  Erving Goffman e Serge Moscovici.
+                </p>
+                <span class="detail-label">Temas de investigação</span>
+                <div class="department-topics">
+                  <span>Identidade social</span>
+                  <span>Cultura</span>
+                  <span>Normas sociais</span>
+                  <span>Poder</span>
+                  <span>Preconceito</span>
+                  <span>Influência</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="department-card" data-search="autoconhecimento desenvolvimento pessoal carl rogers maslow frankl identidade valores propósito hábitos autorreflexão desenvolvimento humano">
+              <div class="department-card-top">
+                <span class="department-number">10</span>
+                <span class="department-tag">Desenvolvimento humano</span>
+              </div>
+              <h3>Autoconhecimento e Desenvolvimento</h3>
+              <p class="department-description">
+                Exploração da identidade, dos valores, do propósito
+                e dos processos de desenvolvimento pessoal por meio
+                de reflexão fundamentada e aprendizagem contínua.
+              </p>
+              <div class="department-detail">
+                <span class="detail-label">Autores centrais</span>
+                <p class="department-authors">
+                  Carl Rogers, Abraham Maslow, Viktor Frankl,
+                  William James e Erich Fromm.
+                </p>
+                <span class="detail-label">Temas de investigação</span>
+                <div class="department-topics">
+                  <span>Identidade</span>
+                  <span>Valores</span>
+                  <span>Propósito</span>
+                  <span>Hábitos</span>
+                  <span>Autorreflexão</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="department-card featured" data-search="consciência realidade existência thomas campbell my big toe bernardo kastrup donald hoffman david chalmers david bohm penrose hameroff monroe grof tart varela thompson wilber metzinger anil seth christof koch giulio tononi dehaene">
+              <div class="department-card-top">
+                <span class="department-number">11</span>
+                <span class="department-tag">Interdisciplinar</span>
+              </div>
+              <h3>Consciência, Realidade e Natureza da Existência</h3>
+              <p class="department-description">
+                Investigação interdisciplinar sobre a experiência
+                consciente, a relação entre mente e matéria, a
+                percepção da realidade e as diferentes teorias
+                sobre a natureza da existência.
+              </p>
+              <div class="department-detail">
+                <span class="detail-label">Autores e pesquisadores</span>
+                <p class="department-authors">
+                  Thomas Campbell, Bernardo Kastrup, Donald Hoffman,
+                  David Chalmers, David Bohm, Roger Penrose,
+                  Stuart Hameroff, Robert Monroe, Stanislav Grof,
+                  Charles Tart, Francisco Varela, Evan Thompson,
+                  Ken Wilber, Thomas Metzinger, Anil Seth,
+                  Christof Koch, Giulio Tononi e Stanislas Dehaene.
+                </p>
+                <span class="detail-label">Temas de investigação</span>
+                <div class="department-topics">
+                  <span>My Big TOE</span>
+                  <span>Consciência</span>
+                  <span>Idealismo</span>
+                  <span>Percepção</span>
+                  <span>Neurofenomenologia</span>
+                  <span>Estados alterados</span>
+                  <span>Realidade</span>
+                  <span>Teorias da consciência</span>
+                </div>
+              </div>
+            </article>
+
+          </div>
+
+          <div class="no-results" id="noResults">
+            Nenhum departamento encontrado. Tente pesquisar por outro
+            autor, área ou palavra-chave.
+          </div>
+        </section>
+
+        <section class="methodology-panel" aria-labelledby="methodology-title">
+          <span class="eyebrow">COMPROMISSO ACADÊMICO</span>
+          <h2 id="methodology-title">Conhecimento exige discernimento.</h2>
+          <p>
+            A Academia da Mente reúne campos científicos, filosóficos
+            e propostas teóricas diferentes. Para preservar a qualidade
+            dos estudos, cada conteúdo deverá deixar claro qual é
+            sua natureza, quais evidências o sustentam e quais são
+            suas limitações.
+          </p>
+
+          <div class="evidence-levels">
+            <div class="evidence-level">
+              <strong>01 · Evidência científica</strong>
+              <p>
+                Resultados sustentados por métodos científicos,
+                pesquisas e evidências acumuladas.
+              </p>
+            </div>
+
+            <div class="evidence-level">
+              <strong>02 · Teorias em investigação</strong>
+              <p>
+                Modelos científicos em desenvolvimento, debate
+                ou investigação.
+              </p>
+            </div>
+
+            <div class="evidence-level">
+              <strong>03 · Hipóteses controversas</strong>
+              <p>
+                Propostas que enfrentam críticas, limitações
+                ou ausência de consenso.
+              </p>
+            </div>
+
+            <div class="evidence-level">
+              <strong>04 · Propostas filosóficas</strong>
+              <p>
+                Interpretações metafísicas e argumentos
+                filosóficos sobre mente e realidade.
+              </p>
+            </div>
+
+            <div class="evidence-level">
+              <strong>05 · Experiências subjetivas</strong>
+              <p>
+                Relatos pessoais e fenômenos da experiência
+                que precisam ser analisados criticamente.
+              </p>
+            </div>
+
+            <div class="evidence-level">
+              <strong>06 · Tradições contemplativas</strong>
+              <p>
+                Perspectivas espirituais e contemplativas
+                estudadas em seus contextos históricos e culturais.
+              </p>
+            </div>
+          </div>
+
+          <div class="department-note">
+            <span aria-hidden="true">✦</span>
+            <p>
+              Uma experiência pessoal pode ser importante para quem
+              a vivencia, mas sua interpretação não deve ser
+              automaticamente apresentada como comprovação científica.
+              O objetivo é estudar diferentes perspectivas sem
+              confundir hipótese, opinião, experiência e evidência.
+            </p>
+          </div>
+        </section>
+
+        <footer class="departments-footer">
+          <span>© ACADEMIA DA MENTE · UNIVERSIDADE DIGITAL</span>
+          <a href="../index.html" class="text-link">
+            Voltar ao painel principal →
+          </a>
+        </footer>
+
+      </main>
+    </div>
+  </div>
+
+  <script>
+    const searchInput = document.getElementById("departmentSearch");
+    const departmentCards = Array.from(
+      document.querySelectorAll(".department-card")
+    );
+    const searchFeedback = document.getElementById("searchFeedback");
+    const noResults = document.getElementById("noResults");
+
+    searchInput.addEventListener("input", function () {
+      const term = this.value
+        .trim()
+        .toLocaleLowerCase("pt-BR");
+
+      let visibleCount = 0;
+
+      departmentCards.forEach(function (card) {
+        const searchableText = (
+          card.innerText + " " +
+          card.dataset.search
+        ).toLocaleLowerCase("pt-BR");
+
+        const matches = searchableText.includes(term);
+
+        card.hidden = !matches;
+
+        if (matches) {
+          visibleCount++;
+        }
+      });
+
+      searchFeedback.textContent =
+        visibleCount === 1
+          ? "1 departamento encontrado."
+          : visibleCount + " departamentos encontrados.";
+
+      noResults.classList.toggle("visible", visibleCount === 0);
+    });
+  </script>
+</body>
+</html>
