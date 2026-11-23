@@ -1,0 +1,389 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101b2b">
+  <meta name="description" content="Estudos de Psicologia Analítica e Profunda na Academia da Mente.">
+  <title>Psicologia Analítica e Profunda | Academia da Mente</title>
+
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+
+  <style>
+    .study-page {
+      width: min(100% - 48px, 1200px);
+      margin: auto;
+      padding: 40px 0 70px;
+    }
+
+    .study-hero {
+      padding: clamp(25px, 5vw, 55px);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background:
+        radial-gradient(circle at 85% 15%, rgba(112,201,197,.12), transparent 22rem),
+        linear-gradient(135deg, #17283c, #101b2b 70%);
+    }
+
+    .study-hero h1 {
+      margin: 18px 0;
+      color: var(--paper-100);
+      font-family: var(--font-display);
+      font-size: clamp(34px, 6vw, 58px);
+      font-weight: 500;
+      line-height: 1.15;
+    }
+
+    .study-hero h1 em {
+      color: var(--gold-400);
+    }
+
+    .study-hero p {
+      max-width: 720px;
+      color: var(--muted-200);
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+    .eyebrow {
+      color: var(--gold-400);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .15em;
+    }
+
+    .study-section {
+      margin-top: 42px;
+    }
+
+    .study-section h2 {
+      color: var(--paper-100);
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: 30px;
+    }
+
+    .intro-panel,
+    .module-content {
+      padding: 22px;
+      border: 1px solid var(--line-cool);
+      border-radius: var(--radius-md);
+      background: var(--surface);
+    }
+
+    .intro-panel p,
+    .module-content p {
+      color: var(--muted-200);
+      font-size: 12px;
+      line-height: 1.9;
+    }
+
+    .curriculum {
+      display: grid;
+      gap: 12px;
+    }
+
+    .module-card {
+      overflow: hidden;
+      border: 1px solid var(--line-cool);
+      border-radius: var(--radius-md);
+      background: var(--surface);
+    }
+
+    .module-card summary {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 20px;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .module-card summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .module-number {
+      color: var(--gold-400);
+      font-family: var(--font-display);
+      font-size: 25px;
+    }
+
+    .module-title {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .module-title strong {
+      display: block;
+      color: var(--paper-100);
+      font-size: 13px;
+    }
+
+    .module-title small {
+      display: block;
+      margin-top: 5px;
+      color: var(--muted-300);
+      font-size: 10px;
+    }
+
+    .module-arrow {
+      color: var(--gold-400);
+    }
+
+    .module-content {
+      margin: 0 12px 12px;
+    }
+
+    .module-topics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 18px;
+    }
+
+    .module-topics span {
+      padding: 6px 9px;
+      border: 1px solid var(--line-cool);
+      border-radius: 5px;
+      color: var(--muted-300);
+      font-size: 9px;
+    }
+
+    .lesson-audio {
+      margin: 22px 0;
+      padding: 17px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: rgba(214,189,137,.05);
+    }
+
+    .lesson-audio p {
+      color: var(--gold-400);
+      font-size: 12px;
+    }
+
+    .lesson-audio audio {
+      display: block;
+      width: 100%;
+      margin-top: 12px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 30px;
+      color: var(--gold-400);
+      font-size: 12px;
+      text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+      .study-page {
+        width: calc(100% - 28px);
+        padding-top: 22px;
+      }
+
+      .module-card summary {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="app-layout">
+
+    <aside class="sidebar">
+      <a class="brand" href="../index.html">
+        <span class="brand-symbol">A</span>
+        <span class="brand-text">
+          <strong>ACADEMIA</strong>
+          <span>DA MENTE</span>
+        </span>
+      </a>
+
+      <div class="sidebar-section">
+        <span class="menu-label">INSTITUIÇÃO</span>
+        <nav class="sidebar-nav">
+          <a class="nav-link" href="../index.html">
+            <span class="nav-icon">⌂</span>
+            <span>Painel principal</span>
+          </a>
+          <a class="nav-link is-active" href="departamentos.html">
+            <span class="nav-icon">▤</span>
+            <span>Departamentos</span>
+          </a>
+        </nav>
+      </div>
+
+      <div class="sidebar-bottom">
+        <div class="sidebar-note">
+          <span class="sidebar-note-mark">✦</span>
+          <p>O conhecimento é uma jornada contínua.</p>
+        </div>
+        <div class="sidebar-footer">
+          <span>ACADEMIA DA MENTE</span>
+          <small>Universidade Digital</small>
+        </div>
+      </div>
+    </aside>
+
+    <div class="main-layout">
+      <header class="topbar">
+        <div class="topbar-context">
+          <span class="topbar-kicker">DEPARTAMENTO 01</span>
+          <strong>Psicologia Analítica e Profunda</strong>
+        </div>
+      </header>
+
+      <main class="study-page">
+
+        <section class="study-hero">
+          <span class="eyebrow">DEPARTAMENTO 01 · PSICOLOGIA</span>
+
+          <h1>Psicologia <em>Analítica e Profunda</em></h1>
+
+          <p>
+            Uma jornada pelo estudo das dimensões conscientes e
+            inconscientes da experiência humana, dos símbolos,
+            dos complexos e dos processos de formação da personalidade.
+          </p>
+        </section>
+
+        <section class="study-section">
+          <span class="eyebrow">APRESENTAÇÃO</span>
+          <h2>Sobre este departamento</h2>
+
+          <div class="intro-panel">
+            <p>
+              Neste departamento, vamos investigar diferentes
+              abordagens da psicologia profunda e suas contribuições
+              para a compreensão da mente humana.
+            </p>
+
+            <p>
+              Estudaremos autores como Sigmund Freud, Carl Gustav Jung,
+              Alfred Adler, Erich Fromm, James Hillman e
+              Marie-Louise von Franz.
+            </p>
+
+            <p>
+              As teorias serão examinadas em seus contextos históricos,
+              conceituais e científicos, distinguindo interpretações,
+              hipóteses e evidências disponíveis.
+            </p>
+          </div>
+        </section>
+
+        <section class="study-section" id="modulos">
+          <span class="eyebrow">PROGRAMA DE APRENDIZAGEM</span>
+          <h2>Módulos de estudo</h2>
+
+          <div class="curriculum">
+
+            <details class="module-card" open>
+              <summary>
+                <span class="module-number">01</span>
+                <span class="module-title">
+                  <strong>Fundamentos da Psicologia Profunda</strong>
+                  <small>A psique, a consciência e os processos inconscientes</small>
+                </span>
+                <span class="module-arrow">⌄</span>
+              </summary>
+
+              <div class="module-content">
+                <p>
+                  Introdução ao conceito de psique e às diferentes
+                  perspectivas que investigam os processos mentais
+                  conscientes e inconscientes.
+                </p>
+
+                <p>
+                  <strong>Objetivo:</strong> compreender os fundamentos
+                  históricos e conceituais da psicologia profunda.
+                </p>
+
+                <div class="lesson-audio">
+                  <p><strong>🎧 Ouvir Aula 01 — Fundamentos da Psicologia Profunda</strong></p>
+
+                  <audio controls preload="metadata">
+                    <source src="../audio/departamento-01/aula-01-fundamentos-psicologia-profunda.mp3" type="audio/mpeg">
+                    Seu navegador não suporta áudio.
+                  </audio>
+                </div>
+
+                <div class="module-topics">
+                  <span>Psique</span>
+                  <span>Consciência</span>
+                  <span>Inconsciente</span>
+                  <span>Psicologia profunda</span>
+                </div>
+              </div>
+            </details>
+
+            <details class="module-card">
+              <summary>
+                <span class="module-number">02</span>
+                <span class="module-title">
+                  <strong>Sigmund Freud e a descoberta do inconsciente</strong>
+                  <small>Psicanálise, conflitos e formação da personalidade</small>
+                </span>
+                <span class="module-arrow">⌄</span>
+              </summary>
+
+              <div class="module-content">
+                <p>
+                  Estudo introdutório da trajetória de Freud,
+                  da construção da psicanálise e de seus conceitos
+                  fundamentais.
+                </p>
+                <div class="module-topics">
+                  <span>Psicanálise</span>
+                  <span>Repressão</span>
+                  <span>Sonhos</span>
+                  <span>Conflitos psíquicos</span>
+                </div>
+              </div>
+            </details>
+
+            <details class="module-card">
+              <summary>
+                <span class="module-number">03</span>
+                <span class="module-title">
+                  <strong>Carl Gustav Jung e a estrutura da psique</strong>
+                  <small>Inconsciente pessoal e coletivo</small>
+                </span>
+                <span class="module-arrow">⌄</span>
+              </summary>
+
+              <div class="module-content">
+                <p>
+                  Introdução à psicologia analítica de Jung,
+                  sua concepção da psique e os principais conceitos
+                  que serão aprofundados nas aulas seguintes.
+                </p>
+                <div class="module-topics">
+                  <span>Jung</span>
+                  <span>Arquétipos</span>
+                  <span>Inconsciente coletivo</span>
+                  <span>Individuação</span>
+                </div>
+              </div>
+            </details>
+
+          </div>
+        </section>
+
+        <a class="back-link" href="departamentos.html">
+          ← Voltar aos departamentos
+        </a>
+
+      </main>
+    </div>
+  </div>
+</body>
+</html>
