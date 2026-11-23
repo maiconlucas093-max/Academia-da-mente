@@ -61,64 +61,135 @@
       </header>
 
       <main id="conteudo" class="main-content">
-        <section class="welcome-section">
-          <div class="welcome-copy">
-            <span class="eyebrow"><span class="eyebrow-line"></span> CONHECIMENTO · CONSCIÊNCIA · EVOLUÇÃO</span>
-            <h1>Bem-vindo à<br><em>Academia da Mente.</em></h1>
-            <p>Um ambiente dedicado à exploração do conhecimento, ao desenvolvimento intelectual e à aprendizagem contínua.</p>
-            <a class="button button-primary" href="pages/departamentos.html">Explorar a universidade <span aria-hidden="true">↗</span></a>
-          </div>
-          <div class="welcome-seal" aria-hidden="true">
-            <div class="seal-ring"><span class="seal-star">✦</span><span class="seal-letter">A</span><span class="seal-caption">SCIENTIA · MENS · PROGRESSUS</span></div>
-          </div>
-        </section>
-
-        <section class="dashboard-section" aria-labelledby="overview-title">
-          <div class="section-heading">
-            <div><span class="eyebrow">VISÃO GERAL</span><h2 id="overview-title">Seu ambiente acadêmico</h2></div>
-            <span class="section-aside">SEU PONTO DE PARTIDA</span>
-          </div>
-          <div class="overview-grid">
-            <article class="overview-card"><div class="metric-top"><span class="card-label">Cursos em andamento</span><span class="metric-icon" aria-hidden="true">▣</span></div><strong>0</strong><small>Nenhuma matrícula cadastrada</small></article>
-            <article class="overview-card"><div class="metric-top"><span class="card-label">Aulas concluídas</span><span class="metric-icon" aria-hidden="true">✓</span></div><strong>0</strong><small>Seu histórico começará aqui</small></article>
-            <article class="overview-card"><div class="metric-top"><span class="card-label">Tempo de estudo</span><span class="metric-icon" aria-hidden="true">◷</span></div><strong>0<span class="metric-unit">h</span></strong><small>Tempo acumulado</small></article>
-            <article class="overview-card"><div class="metric-top"><span class="card-label">Favoritos</span><span class="metric-icon" aria-hidden="true">☆</span></div><strong>0</strong><small>Nenhum item salvo</small></article>
-          </div>
-        </section>
-
-        <section class="dashboard-section" aria-labelledby="continue-title">
-          <div class="section-heading"><div><span class="eyebrow">SUA JORNADA</span><h2 id="continue-title">Continue seus estudos</h2></div></div>
-          <div class="empty-state empty-state-featured">
-            <div class="empty-illustration" aria-hidden="true"><span class="empty-orbit orbit-one"></span><span class="empty-orbit orbit-two"></span><span class="empty-core">✦</span></div>
-            <div class="empty-copy">
-              <span class="empty-overline">UM NOVO CAPÍTULO COMEÇA</span>
-              <h3>Sua jornada começa aqui</h3>
-              <p>Quando você estiver matriculado em um curso, sua última aula estudada e seu progresso aparecerão neste espaço.</p>
-              <a href="pages/departamentos.html" class="text-link">Explorar departamentos <span aria-hidden="true">→</span></a>
+        
+        <section class="neural-hero" aria-labelledby="neural-title">
+          <div class="neural-hero-copy">
+            <span class="eyebrow"><span class="eyebrow-line"></span> UNIVERSIDADE DIGITAL · EXPLORAÇÃO DA MENTE</span>
+            <p class="neural-overline">SUA JORNADA DE CONHECIMENTO</p>
+            <h1 id="neural-title">Explore a mente.<br><em>Conecte descobertas.</em></h1>
+            <p class="neural-description">Uma jornada multidisciplinar pela psicologia, neurociência, consciência e pelos mecanismos que moldam o pensamento humano.</p>
+            <a class="button button-primary" href="#mapa-neural">Explorar mapa do conhecimento <span aria-hidden="true">↗</span></a>
+            <div class="neural-hero-meta">
+              <span><i></i> CONHECIMENTO INTERCONECTADO</span>
+              <span>ACADEMIA DA MENTE · 2026</span>
             </div>
           </div>
+
+          <div class="brain-visual" role="img" aria-label="Ilustração abstrata de um cérebro formado por conexões neurais">
+            <div class="brain-halo"></div>
+            <svg class="brain-svg" viewBox="0 0 520 390" aria-hidden="true">
+              <defs>
+                <radialGradient id="brainGlow">
+                  <stop offset="0%" stop-color="#d6bd89" stop-opacity=".38"/>
+                  <stop offset="100%" stop-color="#d6bd89" stop-opacity="0"/>
+                </radialGradient>
+                <linearGradient id="brainLine" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#d6bd89"/>
+                  <stop offset="100%" stop-color="#66c8c5"/>
+                </linearGradient>
+              </defs>
+              <ellipse cx="260" cy="190" rx="205" ry="155" fill="url(#brainGlow)"/>
+              <g fill="none" stroke="url(#brainLine)" stroke-width="1.4" opacity=".72">
+                <path d="M75 190 C65 105 130 55 205 62 C245 20 330 38 350 75 C425 75 468 130 445 200 C465 265 400 320 340 300 C290 350 210 330 185 300 C110 315 55 260 75 190Z"/>
+                <path d="M260 55 C225 100 220 145 260 190 C225 230 230 275 260 325"/>
+                <path d="M100 145 C150 120 185 135 220 170 M95 220 C145 190 180 210 220 240"/>
+                <path d="M300 85 C335 125 365 130 420 115 M300 285 C350 245 390 250 430 220"/>
+                <path d="M150 90 C160 145 140 175 105 190 M180 290 C205 255 205 225 185 195"/>
+                <path d="M340 90 C320 145 345 170 410 180 M330 300 C310 255 340 220 405 205"/>
+              </g>
+              <g fill="#d6bd89">
+                <circle cx="75" cy="190" r="4"/><circle cx="205" cy="62" r="4"/>
+                <circle cx="350" cy="75" r="4"/><circle cx="445" cy="200" r="4"/>
+                <circle cx="340" cy="300" r="4"/><circle cx="185" cy="300" r="4"/>
+                <circle cx="260" cy="190" r="6"/><circle cx="150" cy="145" r="3"/>
+                <circle cx="370" cy="145" r="3"/><circle cx="150" cy="245" r="3"/>
+                <circle cx="370" cy="245" r="3"/>
+              </g>
+              <g fill="none" stroke="#70c9c5" stroke-width="1" opacity=".8">
+                <path d="M75 190 L150 145 L205 62 L260 190 L350 75 L445 200"/>
+                <path d="M75 190 L150 245 L185 300 L260 190 L370 245 L340 300"/>
+                <path d="M150 145 L260 190 L370 145"/>
+                <path d="M150 245 L260 190 L370 245"/>
+              </g>
+              <circle cx="260" cy="190" r="27" fill="#0c1822" stroke="#d6bd89" stroke-width="1.5"/>
+              <circle cx="260" cy="190" r="17" fill="url(#brainGlow)"/>
+              <text x="260" y="195" fill="#e7d6b2" font-size="13" text-anchor="middle" font-family="Arial">M</text>
+            </svg>
+            <span class="brain-label brain-label-one">NEUROCIÊNCIA</span>
+            <span class="brain-label brain-label-two">CONSCIÊNCIA</span>
+            <span class="brain-label brain-label-three">PSICOLOGIA</span>
+            <span class="brain-caption">MAPA SIMBÓLICO DA MENTE</span>
+          </div>
         </section>
 
-        <section class="dashboard-section" aria-labelledby="departments-title">
+        <section class="dashboard-section neural-stats" aria-labelledby="stats-title">
           <div class="section-heading">
-            <div><span class="eyebrow">ESTRUTURA ACADÊMICA</span><h2 id="departments-title">Departamentos</h2></div>
-            <a href="pages/departamentos.html" class="text-link">Ver departamentos <span aria-hidden="true">→</span></a>
+            <div><span class="eyebrow">SEU PONTO DE PARTIDA</span><h2 id="stats-title">Indicadores de aprendizagem</h2></div>
+            <span class="section-aside">PROGRESSO REAL · SEM DADOS FICTÍCIOS</span>
           </div>
-          <div class="department-preview">
-            <div class="department-preview-icon" aria-hidden="true">⌘</div>
-            <div><h3>O conhecimento em oito grandes áreas</h3><p>Uma estrutura multidisciplinar para conectar ideias, desenvolver repertório e aprofundar sua compreensão do mundo.</p></div>
-            <span class="planned-count"><strong>08</strong><small>áreas planejadas</small></span>
+          <div class="overview-grid">
+            <article class="overview-card"><div class="metric-top"><span class="card-label">Cursos iniciados</span><span class="metric-icon">▣</span></div><strong>0</strong><small>Aguardando sua primeira matrícula</small></article>
+            <article class="overview-card"><div class="metric-top"><span class="card-label">Aulas concluídas</span><span class="metric-icon">✓</span></div><strong>0</strong><small>Nenhuma aula concluída ainda</small></article>
+            <article class="overview-card"><div class="metric-top"><span class="card-label">Horas de estudo</span><span class="metric-icon">◷</span></div><strong>0<span class="metric-unit">h</span></strong><small>Seu tempo será registrado</small></article>
+            <article class="overview-card"><div class="metric-top"><span class="card-label">Conexões exploradas</span><span class="metric-icon">⌘</span></div><strong>0</strong><small>Conexões registradas nos estudos</small></article>
+          </div>
+        </section>
+
+        <section class="dashboard-section" id="mapa-neural" aria-labelledby="map-title">
+          <div class="section-heading">
+            <div><span class="eyebrow">CARTOGRAFIA DO CONHECIMENTO</span><h2 id="map-title">Mapa neural de aprendizagem</h2></div>
+            <span class="section-aside">CAMINHOS INTERDISCIPLINARES</span>
+          </div>
+          <p class="map-intro">Cada núcleo representa uma área de investigação. Os caminhos mostram como diferentes campos podem se conectar durante sua formação.</p>
+
+          <div class="knowledge-map">
+            <div class="map-center">
+              <span class="map-center-symbol">M</span>
+              <strong>A MENTE</strong>
+              <small>Centro de integração</small>
+            </div>
+            <div class="map-connections" aria-hidden="true">
+              <span class="connection connection-a"></span>
+              <span class="connection connection-b"></span>
+              <span class="connection connection-c"></span>
+              <span class="connection connection-d"></span>
+              <span class="connection connection-e"></span>
+              <span class="connection connection-f"></span>
+            </div>
+            <div class="map-nodes">
+              <a class="knowledge-node node-psychology" href="pages/departamentos.html"><span>01</span><strong>Psicologia profunda</strong><small>Jung · Freud · Fromm</small></a>
+              <a class="knowledge-node node-neuro" href="pages/departamentos.html"><span>02</span><strong>Neurociência</strong><small>Cérebro · Cognição</small></a>
+              <a class="knowledge-node node-meta" href="pages/departamentos.html"><span>03</span><strong>Metacognição</strong><small>Pensamento · Aprendizagem</small></a>
+              <a class="knowledge-node node-social" href="pages/departamentos.html"><span>04</span><strong>Psicologia coletiva</strong><small>Grupos · Sociedade</small></a>
+              <a class="knowledge-node node-consciousness" href="pages/departamentos.html"><span>05</span><strong>Consciência e realidade</strong><small>Campbell · Chalmers · Hoffman</small></a>
+              <a class="knowledge-node node-philosophy" href="pages/departamentos.html"><span>06</span><strong>Filosofia</strong><small>Existência · Identidade</small></a>
+            </div>
+          </div>
+          <p class="map-legend"><span></span> Núcleos de conhecimento planejados · Os caminhos serão ativados conforme o avanço acadêmico.</p>
+        </section>
+
+        <section class="dashboard-section" aria-labelledby="path-title">
+          <div class="section-heading">
+            <div><span class="eyebrow">TRILHA DE FORMAÇÃO</span><h2 id="path-title">O caminho começa aqui</h2></div>
+            <span class="section-aside">ETAPAS DA JORNADA</span>
+          </div>
+          <div class="learning-path">
+            <article class="path-step path-step-active"><span class="path-number">01</span><div><small>PRIMEIRA ETAPA</small><h3>Fundamentos da mente humana</h3><p>Conheça os conceitos essenciais para iniciar uma investigação interdisciplinar.</p></div><span class="path-status">PONTO DE PARTIDA</span></article>
+            <article class="path-step"><span class="path-number">02</span><div><small>SEGUNDA ETAPA</small><h3>Conhecer as grandes escolas</h3><p>Explore psicologia, psicanálise, neurociência e filosofia.</p></div><span class="path-status">PRÓXIMA ETAPA</span></article>
+            <article class="path-step"><span class="path-number">03</span><div><small>TERCEIRA ETAPA</small><h3>Conectar teorias e evidências</h3><p>Compare autores, métodos, argumentos e limites de cada abordagem.</p></div><span class="path-status">CAMINHO PLANEJADO</span></article>
+            <article class="path-step"><span class="path-number">04</span><div><small>QUARTA ETAPA</small><h3>Integrar o conhecimento</h3><p>Construa relações entre diferentes áreas e desenvolva pensamento crítico.</p></div><span class="path-status">CAMINHO PLANEJADO</span></article>
           </div>
         </section>
 
         <section class="dashboard-section" aria-labelledby="library-title">
-          <div class="section-heading"><div><span class="eyebrow">ACERVO DIGITAL</span><h2 id="library-title">Biblioteca de aprendizagem</h2></div></div>
-          <div class="empty-state empty-state-compact">
-            <span class="library-empty-icon" aria-hidden="true">▤</span>
-            <div><h3>Biblioteca vazia</h3><p>Nenhum conteúdo didático ou arquivo de áudio foi cadastrado.</p></div>
-            <span class="empty-badge">ACERVO NÃO INICIADO</span>
+          <div class="section-heading"><div><span class="eyebrow">ACERVO ACADÊMICO</span><h2 id="library-title">Biblioteca de conhecimento</h2></div><a href="pages/biblioteca.html" class="text-link">Explorar biblioteca <span aria-hidden="true">→</span></a></div>
+          <div class="library-feature">
+            <span class="library-feature-icon">⌘</span>
+            <div><h3>Autores, obras e pesquisas</h3><p>Uma biblioteca organizada por departamentos, autores, escolas de pensamento, temas e níveis de estudo.</p></div>
+            <span class="library-feature-label">EM CONSTRUÇÃO</span>
           </div>
         </section>
+
       </main>
 
       <footer class="main-footer"><span>© ACADEMIA DA MENTE</span><span>Conhecimento sem limites.</span></footer>
